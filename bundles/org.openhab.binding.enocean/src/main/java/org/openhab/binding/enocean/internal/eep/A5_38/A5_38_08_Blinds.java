@@ -96,7 +96,7 @@ public class A5_38_08_Blinds extends _4BSMessage {
                     db0 |= FUNCTION_BLIND_CLOSES << 4;
                 } else {
                     db0 |= (FUNCTION_BLIND_POSITION_ANGLE << 4) | POSITION_AND_ANGLE_AVAILABLE;
-
+                    // if OR with POSITION_AND_ANGLE_AVAILABLE blind will run to angle 0, though not wanted
                     if (angle < 0) {
                         db1 = (byte) ((0x01 << 7) | ((angle / -2) & 0x7F));
                     } else {
